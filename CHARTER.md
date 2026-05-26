@@ -14,7 +14,7 @@
 
 **GitHub Projects board:** https://github.com/orgs/Addie-Shanti-Org/projects/3
 
-**Discord category:** `#<Project 2: Addison & Shanti>-*`
+**Discord category:** `#Project 2: Addison & Shanti`
 
 **Studio Session:** 3
 
