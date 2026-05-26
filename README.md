@@ -8,8 +8,8 @@
 |-------|-------|
 | Owner team | Addison Gage and Shanti Brodnick |
 | Owner Product Lead | <name> |
-| Peer Stakeholder POs | <names of your 2 or 3 peer PO individuals> |
-| Studio Session | <1, 2, or 3> |
+| Peer Stakeholder POs | Mary Krouse, Aaron Perez Sales, Bradley Allen |
+| Studio Session | 3 |
 | GitHub repo | <link to this repo> |
 | GitHub Projects board | <link> |
 | Discord category | `#<project>-*` |
