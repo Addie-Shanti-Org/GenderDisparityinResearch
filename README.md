@@ -7,7 +7,7 @@
 | Field | Value |
 |-------|-------|
 | Owner team | Addison Gage and Shanti Brodnick |
-| Owner Product Lead | <name> |
+| Owner Product Lead | Shanti Brodnick |
 | Peer Stakeholder POs | Mary Krouse, Aaron Perez Sales, Bradley Allen |
 | Studio Session | 3 |
 | GitHub repo | https://github.com/Addie-Shanti-Org/GenderDisparityinResearch |
