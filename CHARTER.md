@@ -3,11 +3,11 @@
 > Filled in live during the **Studio Charter** session in week 3. Every section below is committed in the same commit at the end of that class block. See [Studio Charter (single-session inception)](https://courses.lpcordova.phd/data510/project-framework/charter-inception.html) for the script and time-boxes.
 
 **Owner team:** Addison Gage and Shanti Brodnick
-**Owner Product Lead:** <name>
-**Peer Stakeholder POs:** <names of your 2 or 3 peer PO individuals>
+**Owner Product Lead:** 
+**Peer Stakeholder POs:** Bradely Allen, Mary Krouse, Aaron Perez Sales
 **Instructor / Sponsor:** Lucas Cordova (`LucasCordova` on GitHub)
-**GitHub repo:** <link to this repo>
-**GitHub Projects board:** <link>
+**GitHub repo:** https://github.com/orgs/Addie-Shanti-Org/repositories
+**GitHub Projects board:** https://github.com/orgs/Addie-Shanti-Org/projects/3
 **Discord category:** `#<project>-*`
 **Studio Session:** <1, 2, or 3>
 **Studio formed:** <date>
