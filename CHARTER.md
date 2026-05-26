@@ -22,11 +22,12 @@
 
 ## Vision
 
-One or two sentences. The world (or organization, or domain) if this project succeeds.
+If this projects succeeds, we will help improve women's health by helping to eliminate gender gaps in research.
+
 
 ## Mission
 
-One or two sentences. What the owner team will actually do this semester.
+Our mission is to idenitify the areas in published medical research that needs to be studied and funded the most to support womens' health lives. We will go in depth once we turn in our project proposal.
 
 ## Context
 
