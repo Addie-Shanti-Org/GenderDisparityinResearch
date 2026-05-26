@@ -52,8 +52,8 @@ Our mission is to idenitify the areas in published medical research that needs t
 
 ## Working agreements (triad with peer POs)
 
-- **Studio Brief due:** <example: by 5 pm the day before class, committed to `studio/briefs/W<NN>-<peer>.md` and linked in `#<project>-studio` on Discord>. If the owner team needs the peer POs to read or review something specific *before* the Studio Session (a data preview, model results, a draft figure), file the Brief earlier so the peer POs actually have time to do that homework. Otherwise the default is "before the Studio Session starts."
-- **Studio Critique due:** <example: by the end of class for the in-person discussion, or at an agreed-upon time within one day after class (e.g., 5 pm the next day) if the peer PO needs extra time to draft a thoughtful write-up>.
+- **Studio Brief due:** Studio Briefs would be due around the time of each milestone, we will communicate dates directly with our peer stakeholders on discord and email.
+- **Studio Critique due:** Studio Critiques will be due a varying number of days before the next milestone. We will communicate dates directly with our peer stakeholders on discord and email.
 - **Priority conflict resolution:** owner team integrates briefs in good faith; the instructor arbitrates (as Process Expert) if peer POs and owner team disagree.
 
 ## Response SLAs (Service Level Agreements)
