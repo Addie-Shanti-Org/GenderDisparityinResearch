@@ -6,7 +6,7 @@
 
 | Field | Value |
 |-------|-------|
-| Owner team | <names> |
+| Owner team | <Addison Gage and Shanti Brodnick> |
 | Owner Product Lead | <name> |
 | Peer Stakeholder POs | <names of your 2 or 3 peer PO individuals> |
 | Studio Session | <1, 2, or 3> |
