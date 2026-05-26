@@ -4,7 +4,7 @@
 
 **Owner team:** Addison Gage and Shanti Brodnick
 
-**Owner Product Lead:** 
+**Owner Product Lead:** Shanti Brodnick
 
 **Peer Stakeholder POs:** Bradely Allen, Mary Krouse, Aaron Perez Sales
 
