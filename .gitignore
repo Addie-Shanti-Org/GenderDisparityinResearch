@@ -1,0 +1,84 @@
+# ---- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- Jupyter --------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---- Virtual environments -------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ---- R / RStudio ----------------------------------------------------------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# ---- Quarto (if a team uses Quarto for the write-up) ----------------------
+.quarto/
+_freeze/
+_site/
+
+# ---- Data -----------------------------------------------------------------
+# Raw, external, and interim data are not committed. Document them in
+# data/README.md instead and keep small, reproducible processed snapshots
+# under data/processed/ if you really need them in git.
+data/raw/
+data/external/
+data/interim/
+*.csv.gz
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.sqlite
+*.db
+*.arrow
+
+# ---- Model artifacts ------------------------------------------------------
+models/*.pt
+models/*.h5
+models/*.pkl
+models/*.bin
+models/*.onnx
+models/*.joblib
+
+# ---- Logs and temp --------------------------------------------------------
+*.log
+logs/
+tmp/
+*.tmp
+
+# ---- Secrets and credentials ---------------------------------------------
+# Never commit credentials. If you accidentally do, rotate the secret first.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.yaml
+secrets.yml
+
+# ---- OS / editor ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
