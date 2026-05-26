@@ -62,11 +62,11 @@ A **Service Level Agreement** is a written promise the triad makes about *how fa
 
 | When this signal arrives... | Who responds | By when |
 |-----------------------------|--------------|---------|
-| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in `#<project>-studio`) | Owner team | <e.g., acknowledge in `#<project>-studio` within 24 hours, with a first-pass adopt / defer / decline call for each item> |
-| Peer PO files a **Studio Critique** | Owner team | <e.g., respond in `#<project>-studio` within 24 hours and capture follow-up items into the backlog> |
-| Owner team posts an **Iteration Review** in `README.md` | Both peer POs | <e.g., read before filing the next Brief and Critique> |
-| Owner team flags a **blocker** in `#<project>-blockers` | Instructor, plus any tagged peer PO | <e.g., responds by the next Studio Session at the latest; faster if online> |
-| Anyone asks a clarifying question in `#<project>-general` | Whoever is tagged (default: owner team) | <e.g., reply within 48 hours, even if the reply is "we will look at this next iteration"> |
+| Peer PO files a **Studio Brief** (commits to `studio/briefs/...`, links in `#<project>-studio`) | Owner team | Acknowledge in `#<project>-studio` within 24 hours, with a first-pass adopt / defer / decline call for each item. |
+| Peer PO files a **Studio Critique** | Owner team | Respond in `#<project>-studio` within 24 hours and capture follow-up items into the backlog. |
+| Owner team posts an **Iteration Review** in `README.md` | Both peer POs | Read before filing the next Brief and Critique |
+| Owner team flags a **blocker** in `#<project>-blockers` | Instructor, plus any tagged peer PO | Responds by the next Studio Session at the latest; faster if online. |
+| Anyone asks a clarifying question in `#<project>-general` | Whoever is tagged (default: owner team) | Reply within 48 hours, even if the reply is "we will look at this next iteration". |
 
 ## Definition of Ready (PBI)
 
@@ -97,15 +97,15 @@ A PBI is done, and may be moved from `Analyze` into `Done`, when:
 ### Why we exist
 <two sentences from Vision and Mission>
 
-### What we will deliver to peer POs every week
-- An Iteration Review in this `README.md` by <day / time>
+### What we will deliver to peer POs every milestone
+- An Iteration Review in this `README.md` by the next
 - A summary of which Studio Brief items we adopted, deferred, or declined and why
 
 ### What we need from peer POs every week
-- A Studio Brief by <day / time> next class (next iteration's requirements, questions, risks)
-- A Studio Critique by <day / time> next class (assessment of last week's delivery)
+- A Studio Brief around next class (next iteration's requirements, questions, risks)
+- A Studio Critique around 1-3 days before next class (assessment of last week's delivery)
 
 ### How to reach us
 - Discord category: `#<project>-general` (day-to-day), `#<project>-studio` (Briefs and Critiques), `#<project>-blockers` (impediments)
-- GitHub repo: <link>
-- GitHub Projects board: <link>
+- GitHub repo: https://github.com/orgs/Addie-Shanti-Org/repositories
+- GitHub Projects board: https://github.com/orgs/Addie-Shanti-Org/projects/3
