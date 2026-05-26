@@ -10,9 +10,9 @@
 | Owner Product Lead | <name> |
 | Peer Stakeholder POs | Mary Krouse, Aaron Perez Sales, Bradley Allen |
 | Studio Session | 3 |
-| GitHub repo | <link to this repo> |
-| GitHub Projects board | <link> |
-| Discord category | `#<project>-*` |
+| GitHub repo | https://github.com/Addie-Shanti-Org/GenderDisparityinResearch |
+| GitHub Projects board | https://github.com/orgs/Addie-Shanti-Org/projects/3 |
+| Discord category | `#Project 2: Addison & Shanti` |
 | Instructor / Sponsor | Lucas Cordova (`LucasCordova` on GitHub) |
 
 ## What this repo contains
