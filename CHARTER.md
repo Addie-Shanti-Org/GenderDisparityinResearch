@@ -14,11 +14,11 @@
 
 **GitHub Projects board:** https://github.com/orgs/Addie-Shanti-Org/projects/3
 
-**Discord category:** `#<project>-*`
+**Discord category:** `#<Project 2: Addison & Shanti>-*`
 
-**Studio Session:** <1, 2, or 3>
+**Studio Session:** 3
 
-**Studio formed:** <date>
+**Studio formed:** 5/25/2026
 
 ## Vision
 
