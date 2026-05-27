@@ -16,25 +16,25 @@ This file is the **human-readable mirror** of the [GitHub Projects (v2) Iterativ
 
 ### PBI-001
 
-- **Title:** Acquire and document <dataset>
-- **Hypothesis:** <dataset> is accessible, license-compatible, and large enough to answer <RQ>.
-- **Create:** ingestion script and `data/README.md` section describing schema.
-- **Observe:** row counts, missingness, key uniqueness, distribution sanity checks.
-- **Analyze:** decide whether the dataset survives feasibility; document in the next Iteration Review.
-- **Tag:** `M1-proposal`
-- **Size:** M
-- **GitHub issue:** <link once filed>
+- **Title:** Finish setting up the repo
+- **Hypothesis:** I don't really get this part :/
+- **Create:** finalized versions of `README.md`, `CHARTER.md`, and `BACKLOG.md`
+- **Observe:** completness of every document, with no missing pieces
+- **Analyze:** decide whether everything looks correct, or to make changes
+- **Tag:** `infra`
+- **Size:** S
+- **GitHub issue:** <https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/1>
 
 ### PBI-002
 
-- **Title:** Draft research question and frame as a testable claim
-- **Hypothesis:** We can state the project's research question in one sentence that names the population, the predictor or treatment, and the outcome.
-- **Create:** RQ statement in `CHARTER.md` Mission section; one-paragraph framing in the proposal draft.
-- **Observe:** can a peer PO who has never seen the project repeat the question back accurately?
-- **Analyze:** revise based on Studio Brief feedback.
+- **Title:** Research for project
+- **Hypothesis:** We can identify the goals of this project and what data will deliver us to them.
+- **Create:** Blocks of information in our shared drive documents that point to different sources and papers.
+- **Observe:** Can we fill out all sections of the project proposal?
+- **Analyze:** Revise or fill missing fields.
 - **Tag:** `M1-proposal`
-- **Size:** S
-- **GitHub issue:** <link once filed>
+- **Size:** M
+- **GitHub issue:** <https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/2>
 
 ### PBI-003
 
