@@ -31,7 +31,7 @@ Our mission is to idenitify the areas in published medical research that needs t
 
 ## Context
 
-- **Users / affected parties:** who benefits, who is at risk, who might use the result.
+- **Users / affected parties:** Women will benefit from this project. As well as health researchers who are passionate and determined to understand where research is needed. Women are at risk. Women's health is understudied. This leads to underdiagnosis, discrimination, chronic health issues, and misdiagnosis. Medical researchers, clincal trial designers, and public health policy makers can all use the results of this project to better their research and policies which directly impact women.
 - **Data sources (proposed):** named sources, access status, license / ethics notes.
 - **Constraints:** time, compute, access, skills, scope.
 - **Ethics risks:** consent, retention, PII, fairness, deployment risk.
