@@ -1,6 +1,6 @@
-# <Project Name>
+# <Gender Disparity in Research>
 
-> One-sentence description of what this project is about. Replace this entire block before week 3.
+> What women's health symptoms and conditions are most discussed in online communities, and to what extent are these topics represented in clinical research?
 
 ## Quick reference
 
