@@ -10,7 +10,7 @@
 
 **Instructor / Sponsor:** Lucas Cordova (`LucasCordova` on GitHub)
 
-**GitHub repo:** https://github.com/orgs/Addie-Shanti-Org/repositories
+**GitHub repo:** https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/tree/main
 
 **GitHub Projects board:** https://github.com/orgs/Addie-Shanti-Org/projects/3
 
