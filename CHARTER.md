@@ -95,13 +95,13 @@ A PBI is done, and may be moved from `Analyze` into `Done`, when:
 ## Stakeholder alignment memo (one-page summary)
 
 ### Why we exist
-<two sentences from Vision and Mission>
+We exist because we want to help improve women's health by eliminating gender gaps in research. This will be done by identifying the missingness in what is published in medical research and what women talk about online. 
 
 ### What we will deliver to peer POs every milestone
 - An Iteration Review in this `README.md` by the next
 - A summary of which Studio Brief items we adopted, deferred, or declined and why
 
-### What we need from peer POs every week
+### What we need from peer POs every milestone
 - A Studio Brief around next class (next iteration's requirements, questions, risks)
 - A Studio Critique around 1-3 days before next class (assessment of last week's delivery)
 
