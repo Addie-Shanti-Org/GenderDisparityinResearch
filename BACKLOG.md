@@ -7,7 +7,7 @@ This file is the **human-readable mirror** of the [GitHub Projects (v2) Iterativ
 - Each item has: id, title, hypothesis or user story, **Create / Observe / Analyze** triple, milestone tag, size.
 - Items are ordered top to bottom by **priority**.
 - Milestone tags: `M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`.
-- Sizes: S, M, L, XL.
+- Effec: Low, Medium, High
 - The board has five columns: `Backlog` → `Create` → `Observe` → `Analyze` → `Done`. Each column is the *phase of work happening on a single PBI right now*, not a work type. See the [Iterative Development board explainer](https://courses.lpcordova.phd/data510/project-framework/#github-projects-board-per-project-iterative-development-board) for what each column means and when to advance a card.
 - WIP cap: `Create + Observe + Analyze` ≤ `owners + 1` at any time.
 - Definition of Ready and Definition of Done live in [`CHARTER.md`](CHARTER.md).
