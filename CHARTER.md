@@ -31,11 +31,12 @@ Our mission is to identify gaps between the health issues women actually experie
 
 - **Users / affected parties:** Women will benefit from this project. As well as health researchers who are passionate and determined to understand where research is needed. Women are at risk. Women's health is understudied. This leads to underdiagnosis, discrimination, chronic health issues, and misdiagnosis. Medical researchers, clincal trial designers, and public health policy makers can all use the results of this project to better their research and policies which directly impact women.
 - **Data sources (proposed):**
-Womens Health Dashboard: https://swhr.org/programs/womens-health-dashboard/ (For backup research question)
+
+**Womens Health Dashboard**: https://swhr.org/programs/womens-health-dashboard/ (For backup research question)
 - We would need to contact info@swhr.org.
 - This would most likely we a downloadable dataset.
 - This would give us access to health conditions that significantly impact women and the research investment that is going along with that. 
-Clinical Trials: https://clinicaltrials.gov/data-api/api
+**Clinical Trials**: https://clinicaltrials.gov/data-api/api
 - We would access this through their OpenAPI
 - This would be one of the main APIs that we would pull health published research on.
 NIH RePORTER: https://reporter.nih.gov/
