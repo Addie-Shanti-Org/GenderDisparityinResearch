@@ -52,22 +52,29 @@ Our mission is to identify gaps between the health issues women actually experie
 **Global Burden of Disease**: https://www.healthdata.org/research-analysis/gbd (For backup research question)
 - We would access this data through a download.
 - The GBD is the largest and most comprehensive effort to quantify health loss across places and over time.
-ScienceDirect: https://www.sciencedirect.com/
+
+**ScienceDirect**: https://www.sciencedirect.com/
 - We would need to contact them for institutional API access.
 - This is one of the most popular and cited medical journals, this would be crucial for health article analysis.
-Nature Medicine: https://www.nature.com/nm/
+
+**Nature Medicine**: https://www.nature.com/nm/
 - We would access this through their Meta API and OpenAccess API.
 - This is the most peer-reviewed medical journal for clinical research, this source would also be crucial for health article analysis.
-Paper Scraper: https://pypi.org/project/paperscraper/
+
+**Paper Scraper**: https://pypi.org/project/paperscraper/
 - We would use this scraper to scrap online health forums.
-Pushshift: https://arxiv.org/abs/2001.08435
+
+**Pushshift**: https://arxiv.org/abs/2001.08435
 - This would help us scrape Reddit.
 - We would need to email for access.
-Reddit API: https://developers.reddit.com/docs/capabilities/server/reddit-api
+
+**Reddit API**: https://developers.reddit.com/docs/capabilities/server/reddit-api
 - We could also try and access Reddit APIs
+
 Other potential scraping tools:
 - Beautiful soup
 - Scrapy
+  
 - **Constraints:** Scraping may be rate-limited, we may have limited data storage, and we need to do modeling in which we analyze the data outputs, which may require time.
 - **Ethics risks:**
   - We plan on using data for a good cause, but if we do it incorrectly we can be misleading and divert attention away from important topics that need to be studied further. 
