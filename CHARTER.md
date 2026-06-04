@@ -21,13 +21,11 @@
 **Studio formed:** 5/25/2026
 
 ## Vision
-
 If this projects succeeds, we will help improve women's health by helping to eliminate gender gaps in research.
 
 
 ## Mission
-
-Our mission is to idenitify the areas in published medical research that needs to be studied and funded the most to support womens' health lives. We will go in depth once we turn in our project proposal.
+Our mission is to analyze published medical research alongside issues being dicussed in women's online health communities to identify the gaps in research that is needed to support women's healthy lives. 
 
 ## Context
 
@@ -38,23 +36,23 @@ Our mission is to idenitify the areas in published medical research that needs t
 
 ## Success criteria by milestone
 
-- **M1, proposal (W4):** <measurable criterion>
-- **M2, data summary (W7):** <measurable criterion>
-- **M3, poster rough draft (W10):** <measurable criterion>
-- **M4, write-up rough draft (W12):** <measurable criterion>
-- **M5, final write-up and poster (W14):** <measurable criterion>
+- **M1, proposal (W4):** We will have the milestone completed the morning of the day it is due. The submission checklist is fully satisfied and the work is doen to the best of our ability. We will understand our research question(s) and our data collection and engineering process. Articulate how our data pipeline will flow from start to end. 
+- **M2, data summary (W7):** We will have the milestone completed the morning of the day it is due. The submission checklist is fully satisfied and the work is done to the best of our ability. Data is fully stored in our railway database, it is completely documented, and we have clear next steps for analytics. 
+- **M3, poster rough draft (W10):** We will have the milestone completed the morning of the day it is due. The submission checklist is fully satisfied and the work is done to the best of our ability. We are mostly completed with our modeling and analytics and have a poster rough draft.
+- **M4, write-up rough draft (W12):** We will have the milestone completed the morning of the day it is due. The submission checklist is fully satisfied and the work is done to the best of our ability. We will have modeling results and analytic results completey finalized. We will have a paper rought draft that can articulate our final pipeline well.
+- **M5, final write-up and poster (W14):** We will have the milestone completed the morning of the day it is due. The submission checklist is fully satisfied and the work is done to the best of our ability. We will have a finished project, finished dashboard, beautiful poster, and well-organized paper! 
 
 ## Working agreements (internal to owner team)
 
-- **Sync rhythm:** <e.g., one async standup per weekday in `#<project>-standup`>
-- **Code review:** <who reviews what, by when>
-- **Decision rule:** <how the team decides when it disagrees>
+- **Sync rhythm:** We will have at minimum one standup per week.
+- **Code review:** We will review each others code at the end of the week. 
+- **Decision rule:** Consult Peer POs and see what they think. 
 
 ## Working agreements (triad with peer POs)
 
 - **Studio Brief due:** Studio Briefs would be due around the time of each milestone, we will communicate dates directly with our peer stakeholders on discord and email.
 - **Studio Critique due:** Studio Critiques will be due a varying number of days before the next milestone. We will communicate dates directly with our peer stakeholders on discord and email.
-- **Priority conflict resolution:** owner team integrates briefs in good faith; the instructor arbitrates (as Process Expert) if peer POs and owner team disagree.
+- **Priority conflict resolution:** Owner team integrates briefs in good faith; the instructor arbitrates (as Process Expert) if peer POs and owner team disagree.
 
 ## Response SLAs (Service Level Agreements)
 
@@ -75,7 +73,7 @@ A PBI is ready to be pulled out of `Backlog` and moved into `Create` when it has
 - A one-sentence hypothesis or user story.
 - A named **Create**, **Observe**, **Analyze** triple.
 - A milestone tag (`M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`).
-- A T-shirt size estimate (S, M, L, XL).
+- Effort (Low, Medium, High) is clearly labeled
 - WIP slack on the board: `Create + Observe + Analyze` is below the team's WIP cap (owners + 1).
 
 ## Definition of Done (PBI)
@@ -87,10 +85,6 @@ A PBI is done, and may be moved from `Analyze` into `Done`, when:
 - The Analyze writeup names a next step (continue, pivot, kill, or decompose into new PBIs).
 - A peer PO has either signed off in `#<project>-studio` or filed a Studio Critique covering it.
 - The card is linked under *Completed PBIs* in the next Iteration Review in `README.md`.
-
-## Context map
-
-> Optional. Replace this block with a Mermaid `flowchart LR` showing how users, data, constraints, and ethics risks flow into the owner team and out to the capstone outcome. See the [`charter-inception.qmd` template](https://courses.lpcordova.phd/data510/project-framework/charter-inception.html) for a starting Mermaid diagram.
 
 ## Stakeholder alignment memo (one-page summary)
 
