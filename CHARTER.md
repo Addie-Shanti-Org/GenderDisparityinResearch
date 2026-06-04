@@ -97,8 +97,8 @@ A PBI is done, and may be moved from `Analyze` into `Done`, when:
 We exist because we want to help improve women's health by eliminating gender gaps in research. This will be done by identifying the missingness in what is published in medical research and what women talk about online. 
 
 ### What we will deliver to peer POs every milestone
-- An Iteration Review in this `README.md` by the next
-- A summary of which Studio Brief items we adopted, deferred, or declined and why
+- An Iteration Review in this `README.md` by the next milestone
+- A summary of which Studio Brief items we adopted, deferred, or declined, and why
 
 ### What we need from peer POs every milestone
 - A Studio Brief around next class (next iteration's requirements, questions, risks)
@@ -106,5 +106,5 @@ We exist because we want to help improve women's health by eliminating gender ga
 
 ### How to reach us
 - Discord category: `#<project>-general` (day-to-day), `#<project>-studio` (Briefs and Critiques), `#<project>-blockers` (impediments)
-- GitHub repo: https://github.com/orgs/Addie-Shanti-Org/repositories
+- GitHub repo: https://github.com/Addie-Shanti-Org/GenderDisparityinResearch
 - GitHub Projects board: https://github.com/orgs/Addie-Shanti-Org/projects/3
