@@ -21,18 +21,23 @@
 **Studio formed:** 5/25/2026
 
 ## Vision
-If this projects succeeds, we will help improve women's health by helping to eliminate gender gaps in research.
+If this project succeeds, we will help improve women's health by helping to eliminate gender gaps in research.
 
 
 ## Mission
-Our mission is to analyze published medical research alongside issues being dicussed in women's online health communities to identify the gaps in research that is needed to support women's healthy lives. 
+Our mission is to identify gaps between the health issues women actually experience and what has been researched. We will do this by gathering data from online communities about what is being discussed and comparing it to what research has been done on women’s health.
 
 ## Context
 
 - **Users / affected parties:** Women will benefit from this project. As well as health researchers who are passionate and determined to understand where research is needed. Women are at risk. Women's health is understudied. This leads to underdiagnosis, discrimination, chronic health issues, and misdiagnosis. Medical researchers, clincal trial designers, and public health policy makers can all use the results of this project to better their research and policies which directly impact women.
 - **Data sources (proposed):** named sources, access status, license / ethics notes.
-- **Constraints:** time, compute, access, skills, scope.
-- **Ethics risks:** consent, retention, PII, fairness, deployment risk.
+- **Constraints:** Scraping may be rate-limited, we may have limited data storage, and we need to do modeling in which we analyze the data outputs, which may require time.
+- **Ethics risks:**
+  - We plan on using data for a good cause, but if we do it incorrectly we can be misleading and divert attention away from important topics that need to be studied further. 
+  - Another ethics consideration is how we will process, store, and use sensitive data collected. We will aim to anonymize data to the best of our ability, leaving out personal information within text or removing the whole data entry if needed. We will carefully analyze the outputs of any modeling we do, making sure no sensitive data is outputted.
+  - We are limited to a few sources of data, for both research and discussion. Getting a general sense of “what is being researched” and “what is discussed most” is difficult, and restrained to the data sources we access. In our findings, we will clarify the exact scope in which we are assessing these things.
+  - Scraping is another ethical issue- we have to ensure we have permission from websites to scrape their contents. Scraping research papers is another issue, as it borders pirating and can violate publisher permissions.
+
 
 ## Success criteria by milestone
 
@@ -45,7 +50,7 @@ Our mission is to analyze published medical research alongside issues being dicu
 ## Working agreements (internal to owner team)
 
 - **Sync rhythm:** We will have at minimum one standup per week.
-- **Code review:** We will review each others code at the end of the week. 
+- **Code review:** We will review each other's code at the end of the week. 
 - **Decision rule:** Consult Peer POs and see what they think. 
 
 ## Working agreements (triad with peer POs)
