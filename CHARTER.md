@@ -36,16 +36,20 @@ Our mission is to identify gaps between the health issues women actually experie
 - We would need to contact info@swhr.org.
 - This would most likely we a downloadable dataset.
 - This would give us access to health conditions that significantly impact women and the research investment that is going along with that. 
+
 **Clinical Trials**: https://clinicaltrials.gov/data-api/api
 - We would access this through their OpenAPI
 - This would be one of the main APIs that we would pull health published research on.
-NIH RePORTER: https://reporter.nih.gov/
+
+**NIH RePORTER**: https://reporter.nih.gov/
 - We would access this data through their OpenAPIs and NIH RePORTER APIs.
 - They have grant information as well as active projects and advanced projects.
-PubMed: https://pmc.ncbi.nlm.nih.gov/tools/developers/
+
+**PubMed**: https://pmc.ncbi.nlm.nih.gov/tools/developers/
 - We would access this data through their 5 available APIS
 - This data source allows us to gain access to biomedical literature.
-Global Burden of Disease: https://www.healthdata.org/research-analysis/gbd (For backup research question)
+
+**Global Burden of Disease**: https://www.healthdata.org/research-analysis/gbd (For backup research question)
 - We would access this data through a download.
 - The GBD is the largest and most comprehensive effort to quantify health loss across places and over time.
 ScienceDirect: https://www.sciencedirect.com/
