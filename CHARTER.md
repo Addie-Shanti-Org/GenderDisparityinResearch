@@ -64,10 +64,6 @@ Our mission is to identify gaps between the health issues women actually experie
 **Paper Scraper**: https://pypi.org/project/paperscraper/
 - We would use this scraper to scrap online health forums.
 
-**Pushshift**: https://arxiv.org/abs/2001.08435
-- This would help us scrape Reddit.
-- We would need to email for access.
-
 **Reddit API**: https://developers.reddit.com/docs/capabilities/server/reddit-api
 - We could also try and access Reddit APIs
 
