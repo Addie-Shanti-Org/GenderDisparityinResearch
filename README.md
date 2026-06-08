@@ -62,7 +62,7 @@ Top PBIs (with milestone tags):
 - https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
 
 **Risks and impediments**
-- Some risks include issues with data collection. One is scraping taking longer than anticipated due to rate-limiting, which we will mitigate by scheduling scraping to run overnight for long periods of time. Another risk is unexpected access issues, which we mitigate by maintaining multiple data sources as backup options. Transforming and storing the data can be computationally expensive, so we will use Railway to host our database and upgrade our plan if necessary. Modeling and analysis can be computationally expensive as well, so we will use Google Colab and its hosted runtimes to improve efficiency.
+- Some risks include issues with data collection. One is scraping taking longer than anticipated due to rate-limiting, which we will mitigate by scheduling scraping to run overnight for long periods of time. Another risk is unexpected access issues, which we mitigate by maintaining multiple data sources as backup options. Transforming and storing the data can be computationally expensive, so we will use Railway to host our database and upgrade our plan if necessary. 
 
 ## Week 5
 
