@@ -40,24 +40,29 @@ One subsection per class week. The owner team commits the new section **before e
 
 ## Week 4 -- Proposal milestone (M1)
 
-**Iteration ending:** <date>
+**Iteration ending:** 6/7/2026
 **Milestone tag in focus:** `M1-proposal`
 
 **Completed PBIs**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/1
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/2
 
 **In-flight (carrying across the boundary)**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/3
 
 **Stakeholder response log**
-- Studio Brief from <peer PO 1>: adopted = ..., deferred = ..., declined (with reason) = ...
-- Studio Brief from <peer PO 2>: adopted = ..., deferred = ..., declined (with reason) = ...
+- Studio Brief from Bradley: adopted = Citation fixes, making main purpose clear, fixing boilerplate sections.  Deferred = Formal tone (editorializing, contracting) for final write-up. declined (with reason) = ...
+- Studio Brief from Aaron: adopted = ..., deferred = ..., declined (with reason) = ...
+- Studio Brief from Mary: adopted = ..., deferred = ..., declined (with reason) = ...
 
 **Plan for next iteration**
-- Top PBIs (with milestone tags): ...
+Top PBIs (with milestone tags):
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/4
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/5
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
 
 **Risks and impediments**
-- ...
+- Some risks include issues with data collection. One is scraping taking longer than anticipated due to rate-limiting, which we will mitigate by scheduling scraping to run overnight for long periods of time. Another risk is unexpected access issues, which we mitigate by maintaining multiple data sources as backup options. Transforming and storing the data can be computationally expensive, so we will use Railway to host our database and upgrade our plan if necessary. Modeling and analysis can be computationally expensive as well, so we will use Google Colab and its hosted runtimes to improve efficiency.
 
 ## Week 5
 
