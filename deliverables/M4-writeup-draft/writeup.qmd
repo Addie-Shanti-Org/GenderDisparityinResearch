@@ -33,7 +33,7 @@ execute:
 
 # Title, Team, and Affiliations
 
-**Project title:** *(same as charter)*
+**Project title:** *Heard but Not Studied: Mapping the Gap Between Health Research and Women’s Lived Experiences*
 
 | Name | Role | Willamette email |
 |------|------|------------------|
