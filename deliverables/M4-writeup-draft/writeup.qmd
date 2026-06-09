@@ -1,0 +1,185 @@
+---
+title: "Capstone Project Write-Up"
+subtitle: "Replace with your project title"
+author:
+  - "Your Name"
+  - "Teammate Two"
+  - "Teammate Three"
+date: today
+bibliography: refs.bib
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+<!--
+  DATA 510 write-up skeleton (Week 5 Quarto lecture).
+
+  Copy this file to your DS3 repo:
+    deliverables/M4-writeup-draft/writeup.qmd
+
+  Week 5: paste prose from your M1 proposal into Introduction, Data, Ethics, Methods.
+  Week 7+: replace stubs with real results from notebooks/ and src/.
+  Week 12 (M4): methods and findings should be stable; render PDF + HTML for submission.
+-->
+
+# Title, Team, and Affiliations
+
+**Project title:** *(same as charter)*
+
+| Name | Role | Willamette email |
+|------|------|------------------|
+| | Owner Product Lead | |
+| | | |
+| | | |
+
+**Peer Stakeholder POs:** *(from lookup)*
+
+**Repository:** `https://github.com/your-org/your-repo`
+
+# Abstract
+
+*(150 to 250 words after you have results. Summarize: problem, approach, key finding, impact, limitation. Write this section last.)*
+
+# Introduction: Problem and Research Questions
+
+<!-- Paste and revise from M1 proposal Section 2. Note any changes since M1. -->
+
+**Problem statement:**
+
+**Primary research question:**
+
+**Secondary questions (if any):**
+
+**Changes since M1 proposal:** *(none yet, or explain pivot)*
+
+# Impact and Stakeholders
+
+<!-- Paste from M1 proposal Section 3. -->
+
+# Related Work and Background
+
+<!-- Brief cited context. Example: -->
+
+Wildfire smoke and respiratory health are well studied at regional scale [@reid2016; @liu2016]. This project applies county-level public data to Oregon specifically.
+
+# Data and Data Engineering
+
+<!-- Paste from M1 Sections 4 and 5; update with actual pipeline state after M2. -->
+
+**Sources:**
+
+| Source | Role | Access |
+|--------|------|--------|
+| | | |
+
+**Engineering summary:** Raw data in `data/raw/`; processed panel in `data/processed/`; ingest scripts in `src/ingest/`.
+
+```{r}
+#| label: tbl-data-qc
+#| tbl-cap: "Example QC summary (replace with your panel)"
+#| echo: true
+
+# Replace with your project data when ready:
+# panel <- readRDS(here::here("data/processed/analysis_panel.rds"))
+# nrow(panel)
+knitr::kable(data.frame(
+  check = c("Rows", "Counties", "Date range"),
+  status = c("stub", "stub", "stub")
+))
+```
+
+# Ethics and Responsible Use
+
+<!-- Paste from M1 Section 8; expand with project-specific limits. -->
+
+- **Privacy:**
+- **Fairness / equity:**
+- **Limitations of setting:**
+- **Non-causal framing:** *(if observational)*
+
+# Methods and Evaluation
+
+<!-- Paste from M1 Section 6; tighten once analysis is fixed. -->
+
+**Design:**
+
+**Primary analysis:**
+
+**Evaluation metrics:**
+
+**Train / validation / holdout:**
+
+```{r}
+#| label: fig-methods-placeholder
+#| fig-cap: "Replace with a methods diagram or exploratory plot"
+#| echo: false
+#| fig-width: 5
+#| fig-height: 3
+
+plot(1, 1, type = "n", xlab = "", ylab = "", main = "Methods figure placeholder")
+text(1, 1, "Replace after M2/M3")
+```
+
+# Results and Visualizations
+
+<!-- Fill after M2 data summary and M3 poster figures. -->
+
+*(Stub: key findings with @fig-methods-placeholder and tables.)*
+
+# Discussion, Limitations, and Future Work
+
+**Interpretation:**
+
+**Limitations:** *(tie to actual data and design)*
+
+**Future work:**
+
+# Conclusions and Recommendations
+
+*(Short, stakeholder-facing takeaways.)*
+
+# Reproducibility and References
+
+**Reproduce main results:**
+
+```bash
+cd your-repo
+quarto render deliverables/M4-writeup-draft/writeup.qmd
+```
+
+**Dependencies:** `requirements.txt` or `renv.lock` in repo root.
+
+**Data:** URLs and approval status documented in `docs/data-dictionary.md`.
+
+# References
+
+::: {#refs}
+:::
+
+<!-- Create refs.bib alongside this file. Example entries: -->
+
+<!--
+@article{liu2016,
+  title={Wildfire-specific fine particulate matter and risk of hospital admissions in urban and rural counties},
+  author={Liu, J. C. and others},
+  journal={Epidemiology},
+  year={2016}
+}
+
+@article{reid2016,
+  title={Critical review of health impacts of wildfire smoke exposure},
+  author={Reid, C. E. and others},
+  journal={Environmental Health Perspectives},
+  year={2016}
+}
+-->
