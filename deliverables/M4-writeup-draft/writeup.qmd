@@ -37,7 +37,7 @@ execute:
 
 | Name | Role | Willamette email |
 |------|------|------------------|
-| | Owner Product Lead | |
+| Shanti Brodnick | Owner Product Lead | sebrodnick@willamette.edu|
 | | | |
 | | | |
 
