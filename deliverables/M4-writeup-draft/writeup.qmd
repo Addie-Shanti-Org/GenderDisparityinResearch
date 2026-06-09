@@ -2,9 +2,8 @@
 title: "Capstone Project Write-Up"
 subtitle: "Heard but Not Studied: Mapping the Gap Between Health Research and Women’s Lived Experiences"
 author:
-  - "Your Name"
-  - "Teammate Two"
-  - "Teammate Three"
+  - "Shanti Brodnick"
+  - "Addision Gage"
 date: today
 bibliography: refs.bib
 format:
