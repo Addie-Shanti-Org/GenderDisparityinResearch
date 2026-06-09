@@ -63,7 +63,7 @@ execute:
 
 # Impact and Stakeholders
 
-<!-- Paste from M1 proposal Section 3. -->
+ The primary stakeholder for this project is women. Stakeholders who will make that happen are medical researchers, clinical trial designers, and public health policymakers who decide where to allocate research funding and direct study enrollment. If this project succeeds, it will produce a data-driven, ranked map of women's health conditions that are widely discussed in patient communities but underrepresented in clinical literature, giving decision-makers a concrete, evidence-based starting point for prioritizing understudied conditions. Secondary stakeholders include patient advocacy organizations (such as endometriosis or PCOS foundations) who can use gap findings to strengthen funding arguments, and then women patients themselves, who stand to benefit downstream if research priorities shift toward conditions they disproportionately experience.
 
 # Related Work and Background
 
