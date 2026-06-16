@@ -1,4 +1,4 @@
-# <Heard but Not Studied: Mapping the Gap Between Health Research and Women’s Lived Experiences>
+# Heard but Not Studied: Mapping the Gap Between Health Research and Women’s Lived Experiences
 Team, affiliations
 
 ## Abstract
