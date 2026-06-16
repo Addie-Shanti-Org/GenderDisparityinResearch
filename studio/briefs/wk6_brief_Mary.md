@@ -4,7 +4,7 @@
 **To:** Addison Gage and Shanti Brodnick
 **Filed:** June 15th, ~5 PM
 **For iteration starting:** June 8th
-**Milestone tag in focus:** N/A
+**Milestone tag in focus:** 1
 
 ## What I want you to consider for the next iteration
 
