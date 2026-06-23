@@ -119,7 +119,7 @@ A PBI is ready to be pulled out of `Backlog` and moved into `Create` when it has
 - A one-sentence hypothesis or user story.
 - A named **Create**, **Observe**, **Analyze** triple.
 - A milestone tag (`M1-proposal`, `M2-data-summary`, `M3-poster-draft`, `M4-writeup-draft`, `M5-final`, `infra`, `ethics`).
-- Effort (Low, Medium, High) is clearly labeled
+- Effort (XS, S, M, L, XL) is clearly labeled
 - WIP slack on the board: `Create + Observe + Analyze` is below the team's WIP cap (owners + 1).
 
 ## Definition of Done (PBI)

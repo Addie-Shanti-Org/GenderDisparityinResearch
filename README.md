@@ -64,39 +64,26 @@ Top PBIs (with milestone tags):
 **Risks and impediments**
 - Some risks include issues with data collection. One is scraping taking longer than anticipated due to rate-limiting, which we will mitigate by scheduling scraping to run overnight for long periods of time. Another risk is unexpected access issues, which we mitigate by maintaining multiple data sources as backup options. Transforming and storing the data can be computationally expensive, so we will use Railway to host our database and upgrade our plan if necessary. 
 
-## Week 5
+## Week 5 and Week 6 (Combining these two)
 
-**Iteration ending:** <date>
+**Iteration ending:** <June 21>
 **Milestone tag in focus:** `M1-proposal` / `M2-data-summary`
 
 **Completed PBIs**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/5
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/4
 
 **Stakeholder response log**
-- ...
+- Studio Brief Mary: Will adopt: Inclusion gender language, mention this in ethics
+- Studio Brief Bradley: Will adopt: Structure analysis of data sources and carefully crafting boolean searches.
 
 **Plan for next iteration**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/9
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/10
 
 **Risks and impediments**
-- ...
-
-## Week 6
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M2-data-summary`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
+- Due to the amount of articles and data, our main risk and implementation is capturing all of the studies published about topics that we are interested in.
 
 ## Week 7 -- Data summary milestone (M2)
 
