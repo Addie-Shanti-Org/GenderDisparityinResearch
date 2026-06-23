@@ -1,6 +1,6 @@
 # Studio Brief -- Week 7
-# From: To: Filed: For iteration starting: Milestone tag in focus: <M2-data-summary>
-# Name: Shanti Brodnick
+### From: To: Filed: For iteration starting: Milestone tag in focus: <M2-data-summary>
+### Name: Shanti Brodnick
 
 ## What I want to consider for the next iteration:
 
