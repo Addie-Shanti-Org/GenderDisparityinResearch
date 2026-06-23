@@ -66,7 +66,7 @@ Top PBIs (with milestone tags):
 
 ## Week 5 and Week 6 (Combining these two)
 
-**Iteration ending:** June 21
+**Iteration ending:** <June 21>
 **Milestone tag in focus:** `M1-proposal` / `M2-data-summary`
 
 **Completed PBIs**
