@@ -1,6 +1,6 @@
 # <Gender Disparity in Research>
 
-> What women's health symptoms and conditions are most discussed in online communities, and to what extent are these topics represented in clinical research?
+> What women’s health symptoms and conditions are most discussed on r/WomensHealth, and to what extent are these topics represented in clinical research on PubMed and ClinicalTrials.gov?
 
 ## Quick reference
 
