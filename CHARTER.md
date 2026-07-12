@@ -30,46 +30,19 @@ Our mission is to identify gaps between the health issues women actually experie
 ## Context
 
 - **Users / affected parties:** Women will benefit from this project. As well as health researchers who are passionate and determined to understand where research is needed. Women are at risk. Women's health is understudied. This leads to underdiagnosis, discrimination, chronic health issues, and misdiagnosis. Medical researchers, clincal trial designers, and public health policy makers can all use the results of this project to better their research and policies which directly impact women.
-- **Data sources (proposed):**
-
-**Womens Health Dashboard**: https://swhr.org/programs/womens-health-dashboard/ (For backup research question)
-- We would need to contact info@swhr.org.
-- This would most likely we a downloadable dataset.
-- This would give us access to health conditions that significantly impact women and the research investment that is going along with that. 
-
+- **Data sources:**
+  
 **Clinical Trials**: https://clinicaltrials.gov/data-api/api
-- We would access this through their OpenAPI
-- This would be one of the main APIs that we would pull health published research on.
-
-**NIH RePORTER**: https://reporter.nih.gov/
-- We would access this data through their OpenAPIs and NIH RePORTER APIs.
-- They have grant information as well as active projects and advanced projects.
+- Access through pytrials python library wrapper https://pypi.org/project/pytrials/
+- Query for keywords and through different dates
 
 **PubMed**: https://pmc.ncbi.nlm.nih.gov/tools/developers/
-- We would access this data through their 5 available APIS
-- This data source allows us to gain access to biomedical literature.
+- Access through paperscraper python library https://pypi.org/project/paperscraper/
+- Query for keywords and through different dates https 
 
-**Global Burden of Disease**: https://www.healthdata.org/research-analysis/gbd (For backup research question)
-- We would access this data through a download.
-- The GBD is the largest and most comprehensive effort to quantify health loss across places and over time.
-
-**ScienceDirect**: https://www.sciencedirect.com/
-- We would need to contact them for institutional API access.
-- This is one of the most popular and cited medical journals, this would be crucial for health article analysis.
-
-**Nature Medicine**: https://www.nature.com/nm/
-- We would access this through their Meta API and OpenAccess API.
-- This is the most peer-reviewed medical journal for clinical research, this source would also be crucial for health article analysis.
-
-**Paper Scraper**: https://pypi.org/project/paperscraper/
-- We would use this scraper to scrap online health forums.
-
-**Reddit API**: https://developers.reddit.com/docs/capabilities/server/reddit-api
-- We could also try and access Reddit APIs
-
-Other potential scraping tools:
-- Beautiful soup
-- Scrapy
+**Reddit API Data**: [https://developers.reddit.com/docs/capabilities/server/reddit-api](https://academictorrents.com/details/3e3f64dee22dc304cdd2546254ca1f8e8ae542b4)
+- Due to Reddit's recent restricting access to APIs, we are using this dataset from Academic Torrents.
+- This datasets utilized pushshift dumps from 2005 to 2025.
   
 - **Constraints:** Scraping may be rate-limited, we may have limited data storage, and we need to do modeling in which we analyze the data outputs, which may require time.
 - **Ethics risks:**
