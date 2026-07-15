@@ -1,3 +1,3 @@
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+# Project Proposal
+
+There is markdown and pdf versions of our proposal.
