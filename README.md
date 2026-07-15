@@ -64,14 +64,15 @@ Top PBIs (with milestone tags):
 **Risks and impediments**
 - Some risks include issues with data collection. One is scraping taking longer than anticipated due to rate-limiting, which we will mitigate by scheduling scraping to run overnight for long periods of time. Another risk is unexpected access issues, which we mitigate by maintaining multiple data sources as backup options. Transforming and storing the data can be computationally expensive, so we will use Railway to host our database and upgrade our plan if necessary. 
 
-## Week 5 and Week 6 (Combining these two)
+## Week 5 - 7
 
-**Iteration ending:** <June 21>
-**Milestone tag in focus:** `M1-proposal` / `M2-data-summary`
+**Iteration ending:** <June 28>
+**Milestone tag in focus:** `M2-data-summary`
 
 **Completed PBIs**
 - https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/5
 - https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/4
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
 
 **Stakeholder response log**
 - Studio Brief Mary: Will adopt: Inclusion gender language, mention this in ethics
@@ -79,110 +80,47 @@ Top PBIs (with milestone tags):
 
 **Plan for next iteration**
 - https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/9
-- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
 - https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/10
 
 **Risks and impediments**
 - Due to the amount of articles and data, our main risk and implementation is capturing all of the studies published about topics that we are interested in.
 
-## Week 7 -- Data summary milestone (M2)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M2-data-summary`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
 
 **Retrospective (milestone boundary)**
 - What worked: ...
 - What did not: ...
 - One change for next iteration: ...
 
-## Week 8
+## Week 8 - 10
 
-**Iteration ending:** <date>
+**Iteration ending:** July 12
 **Milestone tag in focus:** `M3-poster-draft`
 
 **Completed PBIs**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/6
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/12
+- Progress on 9, 10
 
 **Stakeholder response log**
 - ...
 
 **Plan for next iteration**
-- ...
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/14
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/9
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/10
+- https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/13
 
 **Risks and impediments**
-- ...
-
-## Week 9
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M3-poster-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 10 -- Poster rough-draft milestone (M3)
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M3-poster-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
+- Large amounts of article data
 
 **Retrospective (milestone boundary)**
-- What worked: ...
-- What did not: ...
-- One change for next iteration: ...
+- What worked: We really like our poster design.
+- What did not: Poster making takes a lot of time.
+- One change for next iteration: Allocate time to writing up the paper and finalizing the poster.
 
-## Week 11
+## Week 11-12 -- Write-up rough-draft milestone (M4)
 
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M4-writeup-draft`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 12 -- Write-up rough-draft milestone (M4)
-
-**Iteration ending:** <date>
+**Iteration ending:** August 2
 **Milestone tag in focus:** `M4-writeup-draft`
 
 **Completed PBIs**
@@ -202,24 +140,7 @@ Top PBIs (with milestone tags):
 - What did not: ...
 - One change for next iteration: ...
 
-## Week 13
-
-**Iteration ending:** <date>
-**Milestone tag in focus:** `M5-final`
-
-**Completed PBIs**
-- ...
-
-**Stakeholder response log**
-- ...
-
-**Plan for next iteration**
-- ...
-
-**Risks and impediments**
-- ...
-
-## Week 14 -- Final write-up and poster (M5)
+## Week 13-14 -- Final write-up and poster (M5)
 
 **Iteration ending:** <date>
 **Milestone tag in focus:** `M5-final`
