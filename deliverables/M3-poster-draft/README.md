@@ -1,3 +1,9 @@
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+# Poster Draft
+
+PDF is provided in this folder.
+
+Assignment link: https://willamette.instructure.com/courses/10056/assignments/126027
+
+PBIs:
+
+https://github.com/Addie-Shanti-Org/GenderDisparityinResearch/issues/11
