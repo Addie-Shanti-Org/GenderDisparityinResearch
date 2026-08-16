@@ -1,0 +1,584 @@
+---
+title: "Data 510 Capstone"
+output: html_document
+date: "2026-08-05"
+names: Addison Gage and Shanti Brodnick
+---
+# Load in Libraries
+
+```{r}
+#install.packages(c("ggplot2","dplyr","sysfonts","forcats","patchwork","showtext","ragg","stringr","curl"))
+library(dplyr)
+library(tidyr)
+library(forcats)
+library(patchwork)
+library(showtext)
+library(sysfonts)
+library(ragg)
+library(stringr)
+library(curl)
+library(tidyverse)
+library(MASS)
+library(ggplot2)
+library(ggtext)
+```
+
+# Load in Data
+
+```{r}
+# Final Topic Summary
+df = read_csv('/Users/shantibrodnick/Downloads/topic_summary.csv')
+
+# Final Year Data Sets
+f_reddit = read_csv("/Users/shantibrodnick/Downloads/510Capstone/GenderDisparityinResearch/notebooks/Article_Data_APIs/result_reddit.csv")
+f_pubmed = read_csv("/Users/shantibrodnick/Downloads/510Capstone/GenderDisparityinResearch/notebooks/Article_Data_APIs/result_pm.csv")
+f_clinical = read_csv("/Users/shantibrodnick/Downloads/510Capstone/GenderDisparityinResearch/notebooks/Article_Data_APIs/result_ct.csv")
+```
+
+# Custom Capstone Theme
+
+```{r}
+poster_palette <- list(
+  darkest   = "#2B0F1A",
+  plum      = "#432430",
+  wine      = "#7A2A43",
+  rose      = "#E0669A",
+  blush     = "#F2C7D6",
+  pale_pink = "#F7E3EA",
+  off_white = "#FFFAFC"
+)
+
+poster_fonts <- "Libre Franklin"
+
+font_add_google(poster_fonts, poster_fonts)
+showtext_auto()
+
+theme_capstone <- function() {
+  theme_minimal(base_family = poster_fonts) +
+    theme(
+      plot.title = element_text(family = poster_fonts, face = "bold", color = poster_palette$darkest),
+      axis.title = element_text(color = poster_palette$darkest),
+      axis.text = element_text(color = poster_palette$darkest, family = poster_fonts)
+    )
+}
+```
+
+# Data Cleaning
+
+```{r}
+# Create both_sexes column
+search = "interstitial_cystitis|uti|sti_std|thyroid|covid_vaccine|unprotected_sex|painful_sex|breast_pain|libido|hair_loss|iron_anemia|hormonal_acne|bloating|nausea|fatigue_sleep|headache_migraine|allergic_reaction|heart_papliptations|hemorrhoids|hot_flashes_night_sweats"
+
+df$both_sexes = grepl(search, df$topic, ignore.case = TRUE, fixed = FALSE)
+f_reddit$both_sexes = grepl(search, f_reddit$assigned_group, ignore.case = TRUE, fixed = FALSE)
+f_pubmed$both_sexes = grepl(search, f_pubmed$assigned_group, ignore.case = TRUE, fixed = FALSE)
+f_clinical$both_sexes = grepl(search, f_clinical$assigned_group, ignore.case = TRUE, fixed = FALSE)
+
+# Filter where both publications and trials counts are 0
+df = df %>%
+  filter(clinical_trial_count != 0 & paper_count != 0)
+```
+
+# Count Distribution Plot
+
+```{r fig.width=12, fig.height=4, fig.dpi=200}
+make_dist_plot <- function(data, col, title, fill_color) {
+  ggplot(data, aes(x = .data[[col]])) +
+    geom_histogram(aes(y = after_stat(count)), fill = fill_color, bins = 20) +
+    labs(title = 'Distributions of Count Data', x = title, y = "Count") +
+    theme_capstone() +
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank()
+    )
+}
+
+dist_trial <- make_dist_plot(df, "clinical_trial_count", "Distribution of Clinical Trial Count", poster_palette$rose)+
+  scale_x_continuous(breaks = c(0, 5000, 10000, 15000, 20000, 25000), labels = c("0", "5,000", "10,000", '15,000', "20,000", "25,000"))+
+  labs(x='Clinical Trial Count', title='')
+dist_paper <- make_dist_plot(df, "paper_count", "Distribution of Paper Count", poster_palette$wine)+
+  scale_x_continuous(breaks = c(0, 100000, 200000, 300000), labels = c("0", "100,000", "200,000", '300,000'))+
+  labs(y='', x='PubMed Publication Count')+
+  theme(plot.title = element_text(hjust = 0.5))
+dist_post  <- make_dist_plot(df, "post_count", "Distribution of Post Count", poster_palette$blush)+
+  scale_x_continuous(breaks = c(0, 2000, 4000), labels = c("0", "2,000", "4,000"))+
+  labs(y='', x='Reddit Post Count', title='')+
+  theme(plot.subtitle = element_text())
+
+dist_trial | dist_paper | dist_post
+```
+
+
+# Top 10 Most Frequent Topics for PubMed, ClinicalTrials, and Reddit
+
+```{r, fig.width=5, fig.height=7}
+# Clinical Trials Top 10
+df_c_top_10 = df %>%
+  dplyr::select(topic, clinical_trial_count, both_sexes)%>%
+  arrange(desc(clinical_trial_count))%>%
+  head(10)%>%
+  mutate(topic = recode_values(topic, "fatigue_sleep" ~ "Fatigue/Sleep",
+                               "pregnancy_test" ~ "Pregnancy Test",
+                               "nausea" ~ "Nausea",
+                               "sti_std" ~ "STI/STD",
+                               "menopause" ~ "Menopause",
+                               "breast_cancer" ~ "Breast Cancer",
+                               "allergic_reaction" ~ "Allergic Reaction",
+                               "headache_migraine" ~ "Headahce/Migraine",
+                               "pelvic_floor" ~ "Pelvic Floor",
+                               "uti" ~ "UTI"))
+
+# PubMed Top 10 
+df_p_top_10 = df %>%
+  dplyr::select(topic, paper_count, both_sexes)%>%
+  arrange(desc(paper_count))%>%
+  head(10)%>%
+  mutate(topic = recode_values(topic, "sti_std" ~ "STI/STD",
+                               "fatigue_sleep" ~ "Fatigue/Sleep",
+                               "breast_cancer" ~ "Breast Cancer",
+                               "allergic_reaction" ~ "Allergic Reaction",
+                               "headache_migraine" ~ "Headache/Migraine",
+                               "pregnancy_test" ~ "Pregnancy Test",
+                               "thyroid" ~ "Thyroid",
+                               "nausea" ~ "Nausea",
+                               "uti" ~ "UTI",
+                               "hemorrhoids" ~ "Hemorrhoids"))
+# Reddit Top 10
+df_r_top_10 = df %>%
+  dplyr::select(topic, post_count, both_sexes)%>%
+  arrange(desc(post_count))%>%
+  head(10)%>%
+  mutate(topic = recode_values(topic, "menstrual_cycle" ~ "Menstrual Cycle",
+                               "uti" ~ "UTI",
+                               "ovarian_cyst" ~ "Ovarian Cyst",
+                               "yeast_infection" ~ "Yeast Infection",
+                               "oral_contraceptives" ~ "Oral Contraceptives",
+                               "iud" ~ "IUD",
+                               "dysmenorrhea" ~ "Dysmenorrhea",
+                               "sti_std" ~ "STI/STD",
+                               "bacterial_vaginosis" ~ "Bacterial Vaginosis", 
+                               "endometriosis" ~ "Endometriosis"))
+
+df_c_top_10$topic = as.factor(df_c_top_10$topic)
+df_p_top_10$topic = as.factor(df_p_top_10$topic)
+df_r_top_10$topic = as.factor(df_r_top_10$topic)
+
+# Reddit
+plot = ggplot(df_r_top_10, aes(post_count, reorder(topic, post_count), fill = both_sexes))+
+  geom_col()+
+  theme_capstone()+
+  labs(x='', y='', fill = '', title="Top 10 Topics", subtitle = "\nReddit Post Count\n")+
+  scale_fill_manual(values = c('#f171a9',  poster_palette$plum), labels = c("TRUE" = "Male and Female", "FALSE" = "Female only"))+
+  theme(#legend.position = "none",
+        panel.background = element_rect(linewidth=0),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_line(size=0.1, color=poster_palette$wine),
+        panel.grid.minor.x = element_line(size=0.05, color=poster_palette$wine),
+        plot.title = element_text(hjust = 0.5, size=12.5),
+        plot.subtitle = element_text(hjust = 0.50, vjust = -7),
+        legend.position = c(0.5, 1.3),
+        legend.direction = 'horizontal')+
+  scale_x_continuous(breaks = c(0, 2000, 4000), labels = c("0", "2,000", "4,000"))
+
+
+# pubmed
+plot2 = ggplot(df_p_top_10, aes(paper_count, reorder(topic, paper_count), fill = both_sexes))+
+  geom_col()+
+  theme_capstone()+
+  labs(x='', y='', fill = 'Both Sexes', subtitle='PubMed Publication Count')+
+  scale_fill_manual(values = c('#f171a9', poster_palette$plum))+
+  theme(legend.position = "none",
+        plot.subtitle = element_text(hjust = 0.5),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_line(size=0.1, color=poster_palette$wine),
+        panel.grid.minor.x = element_line(size=0.05, color=poster_palette$wine))+
+  scale_x_continuous(breaks = c(0, 100000, 200000, 300000), labels = c("0", "100,000", "200,000", '300,000'))
+
+# reddit
+plot3 = ggplot(df_c_top_10, aes(clinical_trial_count, reorder(topic, clinical_trial_count), fill = both_sexes))+
+  geom_col()+
+  theme_capstone()+
+  labs(x='', y='', fill = 'Both Sexes', subtitle = 'Clinical Trial Count')+
+  theme(legend.position = "none")+
+  scale_fill_manual(values = c('#f171a9', poster_palette$plum))+
+  theme(plot.subtitle = element_text(hjust = 0.5),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_line(size=0.1, color=poster_palette$wine),
+        panel.grid.minor.x = element_line(size=0.05, color=poster_palette$wine))+
+  scale_x_continuous(breaks = c(0, 5000, 10000, 15000, 20000, 25000), labels = c("0", "5,000", "10,000", '15,000', "20,000", "25,000"))
+
+
+final_plot = plot / plot2 / plot3
+final_plot
+```
+
+# PubMed Over the Years
+
+```{r}
+ggplot(f_pubmed, aes(year))+
+  geom_density(adjust=0.6, linewidth=0.3, fill=poster_palette$plum, alpha=0.6)+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(hjust=0.5))+
+  labs(x="Year", y='Publication Density', title='PubMed Publication Density Over the Years')
+```
+# Clinical Trials Over the Years
+
+```{r}
+ggplot(f_clinical, aes(start_year))+
+  geom_density(adjust=0.9, linewidth=0.3, fill=poster_palette$plum, alpha=0.6)+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(hjust=0.5))+
+  labs(x="Year", y='Clinical Trial Density', title='Clinical Trial Density Over the Years')
+```
+
+# Reddit Over the Years
+```{r}
+f_reddit$created_date <- as.POSIXct(f_reddit$created_utc, origin = '1970-01-01', tz = 'UTC')
+```
+
+```{r}
+ggplot(f_reddit, aes(created_date))+
+  geom_density(adjust=0.3, linewidth=0.3, fill=poster_palette$plum, alpha=0.6)+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(hjust=0.5))+
+  labs(x="Year", y='Reddit Density', title='Reddit Density Over the Years')
+```
+
+
+
+
+
+# Calculate Overdispersion
+
+```{r}
+# Reddit
+var(df$post_count) # 1,883,051 variance
+mean(df$post_count) # 1000.429 mean
+
+# ClinicalTrials
+var(df$clinical_trial_count) # 17,619,924
+mean(df$clinical_trial_count) # 2072.286
+
+# PubMed
+var(df$paper_count) # 4,260,828,999
+mean(df$paper_count) # 36,424.14
+```
+
+```{r}
+# Fit Poisson Regression Model
+p_fit_p = glm(paper_count ~ log(post_count), family ='poisson', data = df)
+p_fit_c = glm(clinical_trial_count ~ log(post_count), family = 'poisson', data = df)
+
+# Calculate Pearson residuals
+resid_p = residuals(p_fit_p, type = "pearson")
+resid_c = residuals(p_fit_c, type = "pearson")
+
+### ### ### ###
+
+# Negative Binomial
+nb_fit_p = glm.nb(paper_count ~ log(post_count), data = df)
+nb_fit_c = glm.nb(clinical_trial_count ~ log(post_count), data = df)
+
+# Calculate Pearson residuals
+resid_nb_p = residuals(nb_fit_p, type = "pearson")
+resid_nb_c = residuals(nb_fit_c, type = "pearson")
+```
+
+```{r}
+# The disperion parameter should equal 1!
+
+# Poisson
+# PubMed
+disp_param_p_p = sum(resid_p^2) / p_fit_p$df.residual
+print(disp_param_p_p) # 100,929.1
+
+# ClinicalTrials
+disp_param_p_c = sum(resid_c^2) / p_fit_c$df.residual
+print(disp_param_p_c) # 8,824.975
+
+# Negative Binomial
+# PubMed
+disp_param_nb_p = sum(resid_nb_p^2) / nb_fit_p$df.residual
+print(disp_param_nb_p) # 1.376647
+
+# ClinicalTrials
+disp_param_nb_c = sum(resid_nb_c^2) / nb_fit_c$df.residual
+print(disp_param_nb_c) # 2.049735
+```
+```{r}
+# Poisson - PubMed
+plot(fitted(p_fit_p), resid_p,
+     xlab = "Fitted Values", ylab = "Pearson Residuals",
+     main = "Residual Plot for Poisson Model: PubMed")
+abline(h = 0, col = poster_palette$rose, lwd=1.5)
+
+# Poisson - ClinicalTrials
+plot(fitted(p_fit_c), resid_c,
+     xlab = "Fitted Values", ylab = "Pearson Residuals",
+     main = "Residual Plot for Poisson Model: Clinical Trials")
+abline(h = 0, col = poster_palette$rose, lwd=1.5)
+
+
+# Negative Binomial - PubMed
+plot(fitted(nb_fit_p), resid_nb_p,
+     xlab = "Fitted Values", ylab = "Pearson Residuals",
+     main = "Residual Plot for Negative Binomial Model: PubMed")
+abline(h = 0, col = poster_palette$rose, lwd=1.5)
+
+# Negative Binomial - ClinicalTrials
+plot(fitted(nb_fit_c), resid_nb_c,
+     xlab = "Fitted Values", ylab = "Pearson Residuals",
+     main = "Residual Plot for Negative Binomial Model: Clinical Trials")
+abline(h = 0, col = poster_palette$rose, lwd=1.5)
+```
+# Model Testing
+
+```{r}
+set.seed(333)
+
+############ Poisson
+model = glm(paper_count ~ log(post_count), family = 'poisson', data = df) # Coefficient = 0.2610473 # p-value = <2e-16 ***
+model1 = glm(clinical_trial_count ~ log(post_count), family = 'poisson', data = df) # Coefficient = 0.156032  # p-value = <2e-16 ***
+
+#summary(model)
+#summary(model1)
+
+model2 = glm(paper_count ~ log(post_count) + both_sexes, family = 'poisson', data = df) # Coefficient = 1.6065038 # p-value = <2e-16 ***
+model3 = glm(clinical_trial_count ~ log(post_count) + both_sexes, family = 'poisson', data = df) # Coefficient = 1.356331  # p-value = <2e-16 ***
+
+#summary(model2)
+#summary(model3)
+
+############ Quasi-Poisson
+model4 = glm(paper_count ~ log(post_count), family = 'quasipoisson', data = df) # Coefficient = 0.2610 # p-value = 0.115 
+model5 = glm(clinical_trial_count ~ log(post_count), family = 'quasipoisson', data = df) # Coefficient = 0.1560  # p-value = 0.431 
+
+#summary(model4)
+#summary(model5)
+
+model6 = glm(paper_count ~ log(post_count) + both_sexes, family = 'quasipoisson', data = df) # Coefficient = 1.6065 # p-value = 0.000437
+model7 = glm(clinical_trial_count ~ log(post_count) + both_sexes, family = 'quasipoisson', data = df) # Coefficient = 1.3563  # p-value = 0.018240
+
+#summary(model6)
+#summary(model7)
+
+############ Negative Binomial
+model8 = glm.nb(paper_count ~ log(post_count), data = df) # Coefficient = 0.3654  # p-value = 0.00543
+model9 = glm.nb(clinical_trial_count ~ log(post_count), data = df) # Coefficient = 0.3404  # p-value = 0.0178
+
+#summary(model8)
+#summary(model9)
+
+model10 = glm.nb(paper_count ~ log(post_count) + both_sexes, data = df) # Coefficient = 1.3846 # p-value = 0.000384 ***
+model11 = glm.nb(clinical_trial_count ~ log(post_count) + both_sexes, data = df) # Coefficient = 1.3656  # p-value = 0.00168 ** 
+
+#summary(model10)
+#summary(model11)
+```
+
+# Final Model
+
+```{r}
+set.seed(333)
+
+final_model_pm = glm.nb(paper_count ~ log(post_count) + both_sexes, data = df)
+final_model_ct = glm.nb(clinical_trial_count ~ log(post_count) + both_sexes, data = df)
+
+#summary(final_model_pm)
+#summary(final_model_ct)
+```
+
+```{r}
+# build a grid to predict over, for each combination of both_sexes
+make_pred_grid <- function(df, model, response_var) {
+  grid <- expand.grid(
+    post_count = seq(min(df$post_count), max(df$post_count), length.out = 200),
+    both_sexes = unique(df$both_sexes)
+  )
+  
+  pred <- predict(model, newdata = grid, type = "link", se.fit = TRUE)
+  
+  grid$fit <- exp(pred$fit)
+  grid$lwr <- exp(pred$fit - 1.96 * pred$se.fit)
+  grid$upr <- exp(pred$fit + 1.96 * pred$se.fit)
+  grid$response_var <- response_var
+  
+  grid
+}
+```
+
+```{r}
+pred_paper = make_pred_grid(df, final_model_pm, "paper_count")
+pred_trial = make_pred_grid(df, final_model_ct, "clinical_trial_count")
+```
+
+```{r, fig.width=6}
+ggplot() +
+  geom_ribbon(data = pred_paper,
+              aes(x = post_count, ymin = lwr, ymax = upr, fill = both_sexes),
+              alpha = 0.15) +
+  geom_line(data = pred_paper,
+            aes(x = post_count, y = fit, color = both_sexes),
+            linewidth = 1) +
+  geom_point(data = df,
+             aes(x = post_count, y = paper_count, color = both_sexes),
+             alpha = 1) +
+  scale_fill_manual(values = c("FALSE" = '#f171a9', "TRUE" = '#651b34'),  labels = c("Female only", "Male and Female")) +
+  scale_color_manual(values = c("FALSE" = '#f171a9', "TRUE" = '#651b34'),  labels = c("Female only", "Male and Female"))+ 
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(x = "Reddit post count (log scale)",
+       y = "Paper count (log scale)",
+       title = "PubMed Predicted Counts",
+       color = "",
+       fill = "")+
+  theme_capstone()+
+  theme(legend.position = "top",
+        plot.title = element_text(hjust=0.5))
+```
+
+```{r, fig.width=6}
+ggplot() +
+  geom_ribbon(data = pred_trial,
+              aes(x = post_count, ymin = lwr, ymax = upr, fill = both_sexes),
+              alpha = 0.15) +
+  geom_line(data = pred_trial,
+            aes(x = post_count, y = fit, color = both_sexes),
+            linewidth = 1) +
+  geom_point(data = df,
+             aes(x = post_count, y = clinical_trial_count, color = both_sexes),
+             alpha = 1) +
+  scale_fill_manual(values = c("FALSE" = '#f171a9', "TRUE" = '#651b34'),  labels = c("Female only", "Male and Female")) +
+  scale_color_manual(values = c("FALSE" = '#f171a9', "TRUE" = '#651b34'),  labels = c("Female only", "Male and Female"))+ 
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(x = "Reddit post count (log scale)",
+       y = "Trial count (log scale)",
+       title = "Clinical Trials Predicted Counts",
+       color = "",
+       fill = "")+
+  theme_capstone()+
+  theme(legend.position='top',
+        plot.title = element_text(hjust=0.5))
+```
+
+# Ratios
+
+```{r}
+# extract residuals to find gap topics
+df$expected_paper <- predict(m_paper, type = "response")
+df$ratio_paper    <- df$expected_paper / df$paper_count
+df$ratio_paper_rev = df$paper_count / df$expected_paper
+df$expected_trial <- predict(m_trial, type = "response")
+df$ratio_trial    <- df$expected_trial / df$clinical_trial_count
+df$ratio_trial_rev = df$clinical_trial_count / df$expected_trial
+```
+
+# Papers
+
+```{r, fig.width=8}
+# Top 5 - under-researched (expected >> actual)
+top10 <- df %>% arrange(desc(ratio_paper)) %>% slice_head(n = 10) %>%
+  mutate(topic = factor(topic, levels = topic[order(ratio_paper)]))
+
+p_under <- ggplot(top10, aes(x = ratio_paper, y = topic)) +
+  geom_segment(aes(x = 1, xend = ratio_paper, y = topic, yend = topic),
+               linewidth = 1, color = poster_palette$wine) +
+  geom_point(size = 4, color = poster_palette$wine) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = poster_palette$plum) +
+  labs(
+    x = "Expected / Actual paper count ratio",
+    y = NULL,
+    title = "Top 10 Under-Researched Topics: PubMed",
+    subtitle = "Ratio > 1 = fewer papers than expected given post volume"
+  ) +
+  theme_capstone() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.text.y = element_text(size = 12.5, face="bold")
+  )
+
+# Bottom 5 - over-researched (actual >> expected)
+bottom10 <- df %>% arrange(desc(ratio_paper_rev)) %>% slice_head(n = 10) %>%
+  mutate(topic = factor(topic, levels = topic[order(ratio_paper_rev)]))
+
+p_over <- ggplot(bottom10, aes(x = ratio_paper_rev, y = topic)) +
+  geom_segment(aes(x = 1, xend = ratio_paper_rev, y = topic, yend = topic),
+               linewidth = 1, color = poster_palette$rose) +
+  geom_point(size = 4, color = poster_palette$rose) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = poster_palette$plum) +
+  labs(
+    x = "Actual / Expected paper count ratio",
+    y = NULL,
+    title = "Top 10 Well-Researched Topics: PubMed",
+    subtitle = "Ratio > 1 = more papers than expected given post volume"
+  ) +
+  theme_capstone() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.text.y = element_text(size = 12.5, face="bold")
+  )
+
+p_under
+p_over
+```
+
+# Trials
+
+```{r, fig.width=8}
+# Top 5 - under-researched (expected >> actual)
+top10 <- df %>% arrange(desc(ratio_trial)) %>% slice_head(n = 10) %>%
+  mutate(topic = factor(topic, levels = topic[order(ratio_trial)]))
+
+t_under <- ggplot(top10, aes(x = ratio_trial, y = topic)) +
+  geom_segment(aes(x = 1, xend = ratio_trial, y = topic, yend = topic),
+               linewidth = 1, color = poster_palette$wine) +
+  geom_point(size = 4, color = poster_palette$wine) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = poster_palette$plum) +
+  labs(
+    x = "Expected / Actual trial count ratio",
+    y = NULL,
+    title = "Top 10 Under-Researched Topics: Clinical Trials",
+    subtitle = "Ratio > 1 = fewer trials than expected given post volume"
+  ) +
+  theme_capstone() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+   axis.text.y = element_text(size = 12.5, face="bold")
+  )
+
+# Bottom 5 - over-researched (actual >> expected)
+bottom10 <- df %>% arrange(desc(ratio_trial_rev)) %>% slice_head(n = 10) %>%
+  mutate(topic = factor(topic, levels = topic[order(ratio_trial_rev)]))
+
+t_over <- ggplot(bottom10, aes(x = ratio_trial_rev, y = topic)) +
+  geom_segment(aes(x = 1, xend = ratio_trial_rev, y = topic, yend = topic),
+               linewidth = 1, color = poster_palette$rose) +
+  geom_point(size = 4, color = poster_palette$rose) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = poster_palette$plum) +
+  labs(
+    x = "Actual / Expected trial count ratio",
+    y = NULL,
+    title = "Top 10 Well-Researched Topics: Clinical Trials",
+    subtitle = "Ratio > 1 = more trials than expected given post volume"
+  ) +
+  theme_capstone() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.text.y = element_text(size = 12.5, face="bold")
+  )
+
+t_under
+t_over
+```
+
