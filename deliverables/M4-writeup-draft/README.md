@@ -1,3 +1,7 @@
-- Each milestone folder gets its own `README.md` with the rubric link, the submission link, and a short status (draft, peer-reviewed, submitted).
-- The rendered artifact (PDF, poster PDF, slides PDF) is committed alongside the source so peer POs and graders do not have to render.
-- Every PBI that fed this milestone is linked from the milestone's `README.md` so reviewers can trace the work.
+# Write-up Rough Draft
+
+Status: Submitted and peer-reviewed. Superseded by the final write-up in [`../M5-final/`](../M5-final/).
+
+Source is `writeup.qmd` (Quarto); rendered as `writeup.pdf` and `writeup.html` in this folder, with supporting assets in `writeup_files/`. `refs.bib` holds the bibliography.
+
+PBIs: see the [project board](https://github.com/orgs/Addie-Shanti-Org/projects/3).

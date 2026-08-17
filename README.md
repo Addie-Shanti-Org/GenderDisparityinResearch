@@ -8,7 +8,7 @@
 
 Women make up just over half the global population, yet they have been systematically underrepresented in biomedical research for decades. This project asks a question that has not been answered quantitatively before: **of the health concerns women actually discuss, which ones has research neglected?** We applied topic modeling to 68,848 posts from Reddit's r/WomensHealth, mapped the resulting topics to search keywords, and used those keywords to pull the full publication history from PubMed and the full trial registry from ClinicalTrials.gov. Modeling research volume as a function of discussion volume let us calculate, for each topic, how much research *should* exist and compare it to how much actually does. Topics affecting both sexes turn out to receive roughly **3.8 times** the research of topics affecting only women, and a specific, rankable set of conditions falls far below what discussion volume would predict.
 
-![Predicted PubMed paper count versus Reddit post count, split by whether a topic affects both sexes](deliverables/M5-final/figures/predicted_counts_regression.png)
+![Predicted PubMed paper count versus Reddit post count, split by whether a topic affects both sexes](deliverables/M5-final/figures/fig_9_regression_plot_pubmed.png)
 
 *Each point is one topic. The vertical gap between the two lines is the disparity: at any level of discussion, topics affecting both sexes have substantially more published research.*
 
@@ -18,10 +18,10 @@ Women make up just over half the global population, yet they have been systemati
 
 | Artifact | Link |
 |---|---|
-| **Final write-up** (PDF) | [deliverables/M5-final/writeup.pdf](deliverables/M5-final/) |
-| **Poster** (PDF) | [deliverables/M5-final/poster.pdf](deliverables/M5-final/) |
+| **Final write-up** (PDF) | [deliverables/M5-final/Capstone Final Write-up.pdf](<deliverables/M5-final/Capstone Final Write-up.pdf>) |
+| **Poster** (PDF) | [deliverables/M3-poster-draft/FinalCapstonePoster.pdf](<deliverables/M3-poster-draft/FinalCapstonePoster.pdf>) |
 | **Code repository** | [github.com/Addie-Shanti-Org/GenderDisparityinResearch](https://github.com/Addie-Shanti-Org/GenderDisparityinResearch) |
-| **Project management** | [Project board](https://github.com/orgs/Addie-Shanti-Org/projects/3) · [Charter](CHARTER.md) · [Backlog](BACKLOG.md) · [Iteration reviews](PROCESS.md) |
+| **Project management** | [Project board](https://github.com/orgs/Addie-Shanti-Org/projects/3) · [Charter](CHARTER.md) · [Backlog](BACKLOG.md) |
 
 **Datasets on Kaggle**
 
@@ -37,7 +37,7 @@ Women make up just over half the global population, yet they have been systemati
 
 **Seven topics have more than 10× fewer PubMed papers than their discussion volume predicts.**
 
-![Top ten under-researched topics by expected-to-actual PubMed paper count ratio](deliverables/M5-final/figures/pubmed_under_researched.png)
+![Top ten under-researched topics by expected-to-actual PubMed paper count ratio](deliverables/M5-final/figures/fig_10_under_researched_pubmed.png)
 
 Vaginal health probiotics leads at a 31.8 expected-to-actual ratio, followed by Bartholin cysts at 19.0. Hormonal acne, unprotected sex, painful sex, interstitial cystitis, and bloating round out the topics above 10×.
 
@@ -45,7 +45,7 @@ Vaginal health probiotics leads at a 31.8 expected-to-actual ratio, followed by 
 
 **What women discuss and what gets researched barely overlap.** Eight of the ten most-discussed topics on r/WomensHealth affect women only. Among the ten most-published topics on PubMed, just two do.
 
-![The ten most frequent topics in each data source, color coded by whether they affect women only or both sexes](deliverables/M5-final/figures/top_10_topics.png)
+![The ten most frequent topics in each data source, color coded by whether they affect women only or both sexes](deliverables/M5-final/figures/fig_8_frequent_topic_by_source.png)
 
 Full methodology, model diagnostics, limitations, and the complete topic rankings are in the [write-up](deliverables/M5-final/).
 
@@ -79,16 +79,16 @@ cd GenderDisparityinResearch
 pip install -r requirements.txt
 ```
 
-**Getting the data.** Raw files are gitignored because of their size. The fastest path is to download the three Kaggle datasets linked above into `data/raw/`. To rebuild from source instead, run `notebooks/paperscraper.ipynb` and `notebooks/pytrials.ipynb` for the publication data, and download from AcademicTorrents for the Reddit archive.
+**Getting the data.** Raw files are gitignored because of their size. The fastest path is to download the three Kaggle datasets linked above into `data/raw/`. To rebuild from source instead, run `notebooks/Article_Data_APIs/paperscraper.ipynb` and `notebooks/Article_Data_APIs/pytrials.ipynb` for the publication data, and download from AcademicTorrents for the Reddit archive.
 
 **Running the analysis.**
 
 | Step | File | Notes |
 |---|---|---|
-| Topic modeling | `notebooks/Reddit_Data/BERTopic.ipynb` | Needs a GPU; built for Google Colab. Set `HF_TOKEN` as an environment variable, not in the notebook. |
+| Reddit pipeline (clean → topic model → count → map) | [`notebooks/Reddit_Data/`](notebooks/Reddit_Data/) notebooks `01`–`06` | Run in order; see that folder's README. `03_bertopic.ipynb` needs a GPU. |
 | Publication pull | `notebooks/Article_Data_APIs/paperscraper.ipynb` | Long-running; API rate limits apply. |
 | Trial pull | `notebooks/Article_Data_APIs/pytrials.ipynb` | Long-running; API rate limits apply. |
-| Models and figures | `src/plotting_models.Rmd` | Reads `topic_summary.csv`. Requires `MASS`, `dplyr`, `ggplot2`, `patchwork`, `showtext`. |
+| Models and figures | `notebooks/RCode_Final_Models/Data_510_Capstone.Rmd` | Reads `topic_summary.csv`. Requires `MASS`, `dplyr`, `ggplot2`, `patchwork`, `showtext`. |
 
 **Shortcut.** To reproduce the models and every figure without re-pulling anything, you only need `data/processed/topic_summary.csv` — 49 rows, one per topic, with post, paper, and trial counts. Knit `src/plotting_models.Rmd` against it and you'll get the full results.
 

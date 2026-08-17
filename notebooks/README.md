@@ -1,18 +1,16 @@
 # `notebooks/`
 
-Exploratory and reporting notebooks live here. Suggested naming:
+All analysis notebooks, in three pipelines:
 
 ```
 notebooks/
-  W04-exploration-<topic>.ipynb     # EDA aligned with the M1 proposal
-  W05-feasibility-<dataset>.ipynb
-  W07-data-summary.ipynb            # M2 milestone artifact
-  W10-poster-figures.ipynb          # M3 milestone artifact
-  W12-writeup-figures.ipynb         # M4 milestone artifact
+  Reddit_Data/          # clean posts, topic-model them, count and map topics (run 01-06 in order)
+  Article_Data_APIs/    # pull and process PubMed and ClinicalTrials.gov data by keyword
+  RCode_Final_Models/   # negative binomial regression + final figures
 ```
 
-Conventions:
+- **[`Reddit_Data/`](Reddit_Data/)** — turns the raw r/WomensHealth archive into per-topic post counts. See its own [README](Reddit_Data/README.md) for run order and setup.
+- **`Article_Data_APIs/`** — `paperscraper.ipynb` and `pytrials.ipynb` pull publication and trial records by keyword; the other notebooks in this folder explore and transform that raw pull into keyed, joinable data.
+- **`RCode_Final_Models/`** — `Data_510_Capstone.Rmd` fits the regression models and renders the figures used in the write-up, reading from `data/processed/topic_summary.csv`.
 
-- Keep one notebook per question. Long, kitchen-sink notebooks are a smell.
-- Restart-and-run-all before committing; do not commit a notebook whose outputs are out of order.
-- Heavy reusable code belongs in [`../src/`](../src/), not pasted between notebooks.
+See the [project root README](../README.md) for the full pipeline and how these stages connect.
