@@ -1,0 +1,32 @@
+# Dependencies for notebooks/Reddit_Data/
+# Install with: pip install -r requirements.txt
+# Python 3.10 or newer.
+
+# Core data handling
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+pyarrow>=15.0          # parquet engine for pandas read_parquet / to_parquet
+
+# 01_clean_data
+langdetect==1.0.9      # pinned: DetectorFactory.seed only reproduces within a version
+beautifulsoup4>=4.12
+nltk>=3.9
+# 01 also downloads the punkt, punkt_tab, and stopwords corpora on first run
+
+# 02_frequency_analysis
+wordfreq>=3.1
+scipy>=1.11
+
+# 03_bertopic
+bertopic>=0.16
+scikit-learn>=1.4
+# bertopic installs umap-learn, hdbscan, and sentence-transformers itself.
+# Pin them here only if you hit a resolver conflict.
+
+# 05_mapping_research_reddit, 06_assign_main_topic
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9   # Postgres driver used by the SQLAlchemy connection string
+python-dotenv>=1.0
+
+# Notebook environment
+jupyter>=1.0
