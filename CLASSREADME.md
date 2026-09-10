@@ -1,3 +1,6 @@
+> [!NOTE]  
+> This was the landing page used during the capstone course, where we were modeling a DevOps workflow. Unless you want to know how we incorporated DS3 Studio, this page can be ignored. It is also incomplete, as our priority shifted to working on the project over doing the iteration reviews.
+
 # <Gender Disparity in Research>
 
 > What women’s health symptoms and conditions are most discussed on r/WomensHealth, and to what extent are these topics represented in clinical research on PubMed and ClinicalTrials.gov?
