@@ -47,7 +47,7 @@ Vaginal health probiotics leads at a 31.8 expected-to-actual ratio, followed by 
 
 ![The ten most frequent topics in each data source, color coded by whether they affect women only or both sexes](deliverables/M5-final/figures/fig_8_frequent_topic_by_source.png)
 
-Full methodology, model diagnostics, limitations, and the complete topic rankings are in the [write-up](deliverables/M5-final/).
+Full methodology, model diagnostics, limitations, and the more topic rankings are in the [write-up](deliverables/M5-final/).
 
 ---
 
