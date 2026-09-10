@@ -2,7 +2,7 @@
 
 Status: Submitted.
 
-`Capstone Final Write-up.pdf` is the final report. `figures/` holds every figure referenced in it, in submission order (`fig_1_...` through `fig_14_...`).
+`CapstoneFinalWrite-up.pdf` is the final report. `figures/` holds every figure referenced in it, in submission order (`fig_1_...` through `fig_14_...`).
 
 `FinalCapstonePoster.pdf` is the final poster.
 
