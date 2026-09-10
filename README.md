@@ -4,6 +4,8 @@
 
 **Addison Gage** and **Shanti Brodnick** · Data 510 Capstone · School of Computing & Information Sciences, Willamette University · August 2026
 
+> Direct to the [final write-up](deliverables/M5-final/CapstoneFinalWrite-up.pdf) or the [final poster](deliverables/M5-final/FinalCapstonePoster.pdf).
+
 ---
 
 Women make up just over half the global population, yet they have been systematically underrepresented in biomedical research for decades. This project asks a question that has not been answered quantitatively before: **of the health concerns women actually discuss, which ones has research neglected?** We applied topic modeling to 68,848 posts from Reddit's r/WomensHealth, mapped the resulting topics to search keywords, and used those keywords to pull the full publication history from PubMed and the full trial registry from ClinicalTrials.gov. Modeling research volume as a function of discussion volume let us calculate, for each topic, how much research *should* exist and compare it to how much actually does. Topics affecting both sexes turn out to receive roughly **3.8 times** the research of topics affecting only women, and a specific, rankable set of conditions falls far below what discussion volume would predict.
